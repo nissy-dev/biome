@@ -1,0 +1,11 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.3.3/schema.json",
+    "javascript": {
+        "parser": {
+            "unsafeParameterDecoratorsEnabled": true
+        }
+    },
+    "formatter": {
+        "formatWithErrors": true
+    }
+}

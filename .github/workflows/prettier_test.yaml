@@ -1,0 +1,75 @@
+name: Prettier Test
+
+on:
+  push:
+    branches:
+      - prettier-test
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        run: rustup target add x86_64-unknown-linux-gnu
+      - name: Build binaries
+        run: cargo build -p biome_cli --release --target x86_64-unknown-linux-gnu
+        env:
+          CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER: aarch64-linux-gnu-gcc
+          # Strip all debug symbols from the resulting binaries
+          RUSTFLAGS: "-C strip=symbols"
+          # Inline the version of the npm package in the CLI binary
+          BIOME_VERSION: 0.0.1
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: prettier/prettier
+          path: prettier-repo
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+      # multi parser is out of scope
+      # https://x.com/Vjeux/status/1723406526495576245?s=20
+      - name: Setup test
+        run: |
+          cp scripts/prettier-tests/biome.json ./prettier-repo/
+          cp scripts/prettier-tests/jest.config.js ./prettier-repo/
+          cp scripts/prettier-tests/reporter.js ./prettier-repo/
+          cp scripts/prettier-tests/format-test.js ./prettier-repo/tests/config/
+          # disabled experimental ternaries
+          cp scripts/prettier-tests/disable-experimental-ternaries.js ./prettier-repo/tests/format/js/ternaries/jsfmt.spec.js
+          # disabled embbed languages
+          rm -rf ./prettier-repo/tests/format/js/multiparser-comments
+          rm -rf ./prettier-repo/tests/format/js/multiparser-css
+          rm -rf ./prettier-repo/tests/format/js/multiparser-graphql
+          rm -rf ./prettier-repo/tests/format/js/multiparser-html
+          rm -rf ./prettier-repo/tests/format/js/multiparser-invalid
+          rm -rf ./prettier-repo/tests/format/js/multiparser-markdown
+          rm -rf ./prettier-repo/tests/format/js/multiparser-text
+          rm -rf ./prettier-repo/tests/format/js/template/graphql.js
+          rm -rf ./prettier-repo/tests/format/js/template-literals/css-prop.js
+          rm -rf ./prettier-repo/tests/format/js/template-literals/styled-components-with-expressions.js
+          rm -rf ./prettier-repo/tests/format/js/template-literals/styled-jsx-with-expressions.js
+          rm -rf ./prettier-repo/tests/format/js/template-literals/styled-jsx.js
+          rm -rf ./prettier-repo/tests/format/js/last-argument-expansion/embed.js
+      - name: Install Dependencies
+        run: |
+          yarn install --immutable
+          yarn add jest-stare execa @biomejs/biome -D
+        working-directory: prettier-repo
+      - name: Copy the latest binary
+        run: cp ./target/x86_64-unknown-linux-gnu/release/biome ./prettier-repo/node_modules/@biomejs/cli-linux-x64/biome
+      - name: Test
+        run: yarn test
+        continue-on-error: true
+        working-directory: prettier-repo
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./prettier-repo/jest-stare
+      - name: Update issue
+        run: gh issue view 1 --json body --jq .body > tmp1.md && cat ./prettier-repo/output.md tmp1.md > tmp2.md && gh issue edit 1 --body-file tmp2.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
