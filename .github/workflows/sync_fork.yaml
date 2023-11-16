@@ -1,0 +1,20 @@
+name: sync fork
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: sync
+        run: |
+          gh repo sync nissy-dev/biome --force
+          git checkout prettier-test
+          git rebase main
+          git push --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
