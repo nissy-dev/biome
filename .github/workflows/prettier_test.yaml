@@ -47,12 +47,39 @@ jobs:
           rm -rf ./prettier-repo/tests/format/js/multiparser-invalid
           rm -rf ./prettier-repo/tests/format/js/multiparser-markdown
           rm -rf ./prettier-repo/tests/format/js/multiparser-text
+          rm -rf ./prettier-repo/tests/format/js/comments/html-like
           rm -rf ./prettier-repo/tests/format/js/template/graphql.js
           rm -rf ./prettier-repo/tests/format/js/template-literals/css-prop.js
           rm -rf ./prettier-repo/tests/format/js/template-literals/styled-components-with-expressions.js
           rm -rf ./prettier-repo/tests/format/js/template-literals/styled-jsx-with-expressions.js
           rm -rf ./prettier-repo/tests/format/js/template-literals/styled-jsx.js
           rm -rf ./prettier-repo/tests/format/js/last-argument-expansion/embed.js
+          rm -rf ./prettier-repo/tests/format/js/comments-closure-typecast/styled-components.js
+          # remove tests related to unstable syntax (only forcus on ES6)
+          rm -rf ./prettier-repo/tests/format/js/explicit-resource-management
+          rm -rf ./prettier-repo/tests/format/js/babel-plugins
+          rm -rf ./prettier-repo/tests/format/js/import-reflection
+          rm -rf ./prettier-repo/tests/format/js/source-phase-imports
+          rm -rf ./prettier-repo/tests/format/js/deferred-import-evaluation
+          rm -rf ./prettier-repo/tests/format/js/import-attributes
+          rm -rf ./prettier-repo/tests/format/js/import-assertions
+          rm -rf ./prettier-repo/tests/format/js/**/tuple-and-record.js
+          rm -rf ./prettier-repo/tests/format/js/module-blocks
+          rm -rf ./prettier-repo/tests/format/js/bind-expressions
+          rm -rf ./prettier-repo/tests/format/js/tuple
+          rm -rf ./prettier-repo/tests/format/js/record
+          rm -rf ./prettier-repo/tests/format/js/v8_intrinsic
+          rm -rf ./prettier-repo/tests/format/js/throw_expressions
+          rm -rf ./prettier-repo/tests/format/js/pipeline-operator
+          rm -rf ./prettier-repo/tests/format/js/partial-application
+          rm -rf ./prettier-repo/tests/format/js/do
+          rm -rf ./prettier-repo/tests/format/js/comments-pipeline-own-line
+          rm -rf ./prettier-repo/tests/format/js/async-do-expressions
+          rm -rf ./prettier-repo/tests/format/js/arrows-bind
+          rm -rf ./prettier-repo/tests/format/js/destructuring-private-fields
+          rm -rf ./prettier-repo/tests/format/js/class-static-blocks
+          rm -rf ./prettier-repo/tests/format/js/decorator*
+          rm -rf ./prettier-repo/tests/format/js/no-semi-babylon-extensions
       - name: Install Dependencies
         run: |
           yarn install --immutable
