@@ -80,6 +80,9 @@ jobs:
           rm -rf ./prettier-repo/tests/format/js/class-static-blocks
           rm -rf ./prettier-repo/tests/format/js/decorator*
           rm -rf ./prettier-repo/tests/format/js/no-semi-babylon-extensions
+          # range format or IDE cursor
+          rm -rf ./prettier-repo/tests/format/js/range
+          rm -rf ./prettier-repo/tests/format/js/cursor
       - name: Install Dependencies
         run: |
           yarn install --immutable
