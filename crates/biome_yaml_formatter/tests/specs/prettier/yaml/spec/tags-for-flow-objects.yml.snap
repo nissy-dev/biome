@@ -19,19 +19,13 @@ info: yaml/spec/tags-for-flow-objects.yml
 ```diff
 --- Prettier
 +++ Biome
-@@ -1 +1,4 @@
+@@ -1 +1 @@
 -!!map { k: !!seq [a, !!str b] }
-+!!map {
-+  k: !!seq
-+  [ a, !!str b]
-+}
++!!map{ k: !!seq[a, !!str b] }
 ```
 
 # Output
 
 ```yml
-!!map {
-  k: !!seq
-  [ a, !!str b]
-}
+!!map{ k: !!seq[a, !!str b] }
 ```

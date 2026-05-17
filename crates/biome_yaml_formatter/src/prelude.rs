@@ -4,6 +4,7 @@
 #![allow(unused_imports)]
 pub(crate) use crate::{
     AsFormat, FormatNodeRule, FormattedIterExt as _, IntoFormat, YamlFormatContext, YamlFormatter,
+    separated::FormatAstSeparatedListExtension, trivia::format_removed,
     verbatim::format_yaml_verbatim_node as format_verbatim_node, verbatim::*,
 };
 pub(crate) use biome_formatter::prelude::*;

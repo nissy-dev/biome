@@ -22,12 +22,11 @@ info: yaml/flow-sequence/comment-between.yml
 +++ Biome
 @@ -1,5 +1,5 @@
  [
--  ? 123
+   ? 123
 -  # comment
 -  : 456,
-+? 123
-+# comment
 +: 456
++# comment
  ]
 ```
 
@@ -35,8 +34,8 @@ info: yaml/flow-sequence/comment-between.yml
 
 ```yml
 [
-? 123
-# comment
+  ? 123
 : 456
+# comment
 ]
 ```

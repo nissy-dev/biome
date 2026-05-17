@@ -16,7 +16,7 @@ info: yaml/flow-mapping/array-value.yml
 ```diff
 --- Prettier
 +++ Biome
-@@ -1,20 +1 @@
+@@ -1,20 +1,15 @@
 -{
 -  a:
 -    [
@@ -37,16 +37,39 @@ info: yaml/flow-mapping/array-value.yml
 -      longlonglonglonglonglonglonglonglonglonglong,
 -    ],
 -}
-+{a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
++{ a: [
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++],
++b: [
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++],
++c: [
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++] }
 ```
 
 # Output
 
 ```yml
-{a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-```
-
-# Lines exceeding max width of 80 characters
-```
-    1: {a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+{ a: [
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+],
+b: [
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+],
+c: [
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+] }
 ```

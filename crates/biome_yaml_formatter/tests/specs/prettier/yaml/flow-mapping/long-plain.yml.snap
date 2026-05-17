@@ -16,22 +16,21 @@ info: yaml/flow-mapping/long-plain.yml
 ```diff
 --- Prettier
 +++ Biome
-@@ -1,5 +1 @@
+@@ -1,5 +1,3 @@
 -{
 -  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
 -  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
 -  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,
 -}
-+{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
++{ longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
++longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
++longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3 }
 ```
 
 # Output
 
 ```yml
-{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
-```
-
-# Lines exceeding max width of 80 characters
-```
-    1: {longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
+{ longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
+longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
+longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3 }
 ```

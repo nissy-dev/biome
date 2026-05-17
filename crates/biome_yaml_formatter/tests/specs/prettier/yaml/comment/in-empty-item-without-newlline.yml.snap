@@ -16,15 +16,13 @@ a:
 ```diff
 --- Prettier
 +++ Biome
-@@ -1,2 +1,2 @@
+@@ -1,2 +1 @@
  a:
 -  #123
-+  #123
-\ No newline at end of file
 ```
 
 # Output
 
 ```yml
 a:
-  #123```
+```

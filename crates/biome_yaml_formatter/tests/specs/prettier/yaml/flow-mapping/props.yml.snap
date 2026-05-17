@@ -18,11 +18,11 @@ info: yaml/flow-mapping/props.yml
 +++ Biome
 @@ -1 +1 @@
 -!!map &anchor { a: 1 }
-+!!map &anchor {a: 1}
++!!map &anchor{ a: 1 }
 ```
 
 # Output
 
 ```yml
-!!map &anchor {a: 1}
+!!map &anchor{ a: 1 }
 ```

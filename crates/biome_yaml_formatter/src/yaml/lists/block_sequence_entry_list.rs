@@ -5,6 +5,10 @@ pub(crate) struct FormatYamlBlockSequenceEntryList;
 impl FormatRule<YamlBlockSequenceEntryList> for FormatYamlBlockSequenceEntryList {
     type Context = YamlFormatContext;
     fn fmt(&self, node: &YamlBlockSequenceEntryList, f: &mut YamlFormatter) -> FormatResult<()> {
-        f.join().entries(node.iter().formatted()).finish()
+        let mut join = f.join_nodes_with_hardline();
+        for entry in node.iter() {
+            join.entry(entry.syntax(), &entry.format());
+        }
+        join.finish()
     }
 }

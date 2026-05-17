@@ -27,7 +27,7 @@ c: d	#X
 +a: b	
 +seq:	
 + - a	
-+c: d	#X
++c: d	
 ```
 
 # Output
@@ -36,5 +36,5 @@ c: d	#X
 a: b	
 seq:	
  - a	
-c: d	#X
+c: d	
 ```

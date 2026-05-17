@@ -5,6 +5,12 @@ pub(crate) struct FormatYamlPropertyList;
 impl FormatRule<YamlPropertyList> for FormatYamlPropertyList {
     type Context = YamlFormatContext;
     fn fmt(&self, node: &YamlPropertyList, f: &mut YamlFormatter) -> FormatResult<()> {
-        f.join().entries(node.iter().formatted()).finish()
+        let mut join = f.join_nodes_with_space();
+
+        for property in node.iter() {
+            join.entry(property.syntax(), &property.format());
+        }
+
+        join.finish()
     }
 }

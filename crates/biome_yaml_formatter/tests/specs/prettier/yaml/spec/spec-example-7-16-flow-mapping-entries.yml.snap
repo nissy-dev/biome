@@ -15,26 +15,7 @@ implicit: entry,
 ```
 
 
-# Prettier differences
-
-```diff
---- Prettier
-+++ Biome
-@@ -1 +1,5 @@
--{ explicit: entry, implicit: entry, : }
-+{
-+? explicit: entry,
-+implicit: entry,
-+?
-+}
-```
-
-# Output
-
-```yml
-{
-? explicit: entry,
-implicit: entry,
-?
-}
+# Error
+```text
+reformat: failed to format: Can't format code because it contains syntax errors
 ```

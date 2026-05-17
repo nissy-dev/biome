@@ -21,23 +21,13 @@ info: yaml/spec/various-location-of-anchors-in-flow-sequence.yml
 ```diff
 --- Prettier
 +++ Biome
-@@ -1 +1,6 @@
+@@ -1 +1 @@
 -&flowseq [a: b, &c c: d, { &e e: f }, &g { g: h }]
-+&flowseq [
-+ a: b,
-+ &c c: d,
-+ { &e e: f },
-+ &g { g: h }
-+]
++&flowseq[a: b, &c c: d, { &e e: f }, &g{ g: h }]
 ```
 
 # Output
 
 ```yml
-&flowseq [
- a: b,
- &c c: d,
- { &e e: f },
- &g { g: h }
-]
+&flowseq[a: b, &c c: d, { &e e: f }, &g{ g: h }]
 ```

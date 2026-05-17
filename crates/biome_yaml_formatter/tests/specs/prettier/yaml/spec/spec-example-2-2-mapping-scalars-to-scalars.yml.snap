@@ -23,7 +23,7 @@ rbi: 147   # Runs Batted In
 +hr:  65    # Home runs
  avg: 0.278 # Batting average
 -rbi: 147 # Runs Batted In
-+rbi: 147   # Runs Batted In
++rbi: 147   
 ```
 
 # Output
@@ -31,5 +31,5 @@ rbi: 147   # Runs Batted In
 ```yml
 hr:  65    # Home runs
 avg: 0.278 # Batting average
-rbi: 147   # Runs Batted In
+rbi: 147   
 ```

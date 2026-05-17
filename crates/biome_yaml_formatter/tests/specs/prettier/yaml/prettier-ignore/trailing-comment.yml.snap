@@ -22,7 +22,8 @@ def:     456 # hello
 -abc: 123 # hello
 +abc:     123 # hello
  # prettier-ignore
- def:     456 # hello
+-def:     456 # hello
++def:     456 
 ```
 
 # Output
@@ -30,5 +31,5 @@ def:     456 # hello
 ```yml
 abc:     123 # hello
 # prettier-ignore
-def:     456 # hello
+def:     456 
 ```

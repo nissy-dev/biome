@@ -16,7 +16,7 @@ info: yaml/flow-mapping/array-key-array-value.yml
 ```diff
 --- Prettier
 +++ Biome
-@@ -1,32 +1 @@
+@@ -1,32 +1,27 @@
 -{
 -  ? [
 -      longlonglonglonglonglonglonglonglonglonglong,
@@ -49,16 +49,63 @@ info: yaml/flow-mapping/array-key-array-value.yml
 -      longlonglonglonglonglonglonglonglonglonglong,
 -    ],
 -}
-+{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
++{ [
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++]: [
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++],
++[
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++]: [
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++],
++[
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++]: [
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong,
++  longlonglonglonglonglonglonglonglonglonglong
++] }
 ```
 
 # Output
 
 ```yml
-{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-```
-
-# Lines exceeding max width of 80 characters
-```
-    1: {[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+{ [
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+]: [
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+],
+[
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+]: [
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+],
+[
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+]: [
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglong
+] }
 ```
